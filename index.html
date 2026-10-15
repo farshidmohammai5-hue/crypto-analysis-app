@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحلیل‌گر ارز دیجیتال</title>
+<style>
+body{font-family:Arial,sans-serif;background:#101827;color:#fff;margin:0;padding:20px}
+.card{background:#1e293b;padding:18px;border-radius:14px;margin:14px 0}
+h1{color:#38bdf8;font-size:24px}
+input,button{padding:12px;border-radius:8px;border:0;margin:5px;font-size:15px}
+input{width:85%;max-width:320px}
+button{background:#0284c7;color:white}
+.muted{color:#cbd5e1;font-size:14px}
+</style>
+</head>
+<body>
+<h1>📊 تحلیل‌گر ارز دیجیتال</h1>
+<p class="muted">نسخه آزمایشی رایگان</p>
+<div class="card">
+<h3>جست‌وجوی ارز</h3>
+<input id="coin" value="BTCUSDT" placeholder="مثلاً BTCUSDT">
+<button onclick="analyze()">تحلیل</button>
+<p id="result">نام ارز را وارد کن و تحلیل را بزن.</p>
+</div>
+<div class="card">
+<h3>شاخص‌های تحلیل</h3>
+<p>RSI: <span id="rsi">—</span></p>
+<p>روند: <span id="trend">—</span></p>
+<p class="muted">اطلاعات این نسخه آزمایشی از بازار دریافت نمی‌شود.</p>
+</div>
+<script>
+function analyze(){
+const coin=document.getElementById('coin').value.trim().toUpperCase();
+if(!coin){document.getElementById('result').textContent='نام ارز را وارد کن.';return;}
+document.getElementById('result').textContent='ارز انتخاب‌شده: '+coin;
+document.getElementById('rsi').textContent='هنوز محاسبه نشده';
+document.getElementById('trend').textContent='داده بازار متصل نیست';
+}
+</script>
+</body>
+</html>
